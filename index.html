@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My CR Remover Tool</title>
+    <style>
+        body { font-family: Arial; padding: 20px; text-align: center; }
+        textarea { width: 80%; height: 200px; margin-bottom: 10px; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Text Line Break Remover</h2>
+    <textarea id="input" placeholder="Yahan apna text paste karein..."></textarea><br>
+    <button onclick="removeBreaks()">Remove Line Breaks</button>
+    <h3>Result:</h3>
+    <textarea id="output" readonly></textarea>
+
+    <script>
+        function removeBreaks() {
+            let text = document.getElementById('input').value;
+            // Ye line breaks ko space se badal deta hai
+            let cleanText = text.replace(/\r?\n|\r/g, " "); 
+            document.getElementById('output').value = cleanText;
+        }
+    </script>
+</body>
+</html>
+
